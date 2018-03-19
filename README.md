@@ -9,6 +9,10 @@ Run custom commands during the build process.
 2. Create `EXEC_CMD` **config variable**.  
 	Example: `echo 'web: npm start -- --environment prod --port $PORT' > Procfile`
 
+## Notes
+
+* The script is executed into _build_ folder (see [doc](https://devcenter.heroku.com/articles/buildpack-api#bin-compile))
+
 ## Output logs
 
 ```log

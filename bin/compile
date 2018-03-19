@@ -7,6 +7,7 @@ ENV_DIR=$3
 
 if [ -f $ENV_DIR/EXEC_CMD ]; then
 	EXEC_CMD=$(cat "$ENV_DIR/EXEC_CMD")
+	cd $BUILD_DIR
 	echo "-----> \"EXEC_CMD\" environment variable found"
 	echo "       Executing \"EXEC_CMD\" command..."
 	eval "$EXEC_CMD"
