@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# bin/compile <build-dir> <cache-dir> <env-dir>
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+ENV_DIR=$3
+
+if [ -f $ENV_DIR/EXEC_CMD ]; then
+	EXEC_CMD=$(cat "$ENV_DIR/EXEC_CMD")
+	echo "-----> \"EXEC_CMD\" environment variable found"
+	echo "       Executing \"EXEC_CMD\" command..."
+	eval "$EXEC_CMD"
+else
+	echo "-----> \"EXEC_CMD\" environment variable not found"
+	echo "       Skipped!"
+fi
+
+exit 0
